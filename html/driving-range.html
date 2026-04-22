@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Range</title>
+    <link rel="stylesheet" href="../css/drivingrangestyles.css">
+</head>
+<body>
+    <div class="pageLinks">
+        <a href="work.html">Back to Work Page</a>
+        <a href="../index.html">Back to Me</a>
+    </div>
+
+    <main class="rangePage">
+        <h1>Driving Range</h1>
+        <img class="rangeFlag" src="../assets/img/flag.png" alt="Golf flag">
+        <div class="rangeStrip" aria-hidden="true"></div>
+    </main>
+
+    <img
+        class="golfBall"
+        id="golfBall"
+        src="../assets/img/golfball.png"
+        alt="Golf ball">
+
+    <img
+        class="cursorClub"
+        id="cursorClub"
+        src="../assets/img/golfclub.png"
+        alt=""
+        aria-hidden="true">
+
+    <script>
+        const golfBall = document.getElementById("golfBall");
+        const cursorClub = document.getElementById("cursorClub");
+        const triggerDistance = 140;
+
+        function moveBallToRandomSpot() {
+            const ballRect = golfBall.getBoundingClientRect();
+            const maxX = Math.max(window.innerWidth - ballRect.width, 0);
+            const maxY = Math.max(window.innerHeight - ballRect.height, 0);
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            golfBall.style.left = randomX + "px";
+            golfBall.style.top = randomY + "px";
+        }
+
+        window.addEventListener("load", moveBallToRandomSpot);
+        window.addEventListener("resize", moveBallToRandomSpot);
+
+        document.addEventListener("mousemove", function (event) {
+            cursorClub.style.left = event.clientX + 18 + "px";
+            cursorClub.style.top = event.clientY + 18 + "px";
+
+            const ballRect = golfBall.getBoundingClientRect();
+            const ballCenterX = ballRect.left + ballRect.width / 2;
+            const ballCenterY = ballRect.top + ballRect.height / 2;
+            const deltaX = event.clientX - ballCenterX;
+            const deltaY = event.clientY - ballCenterY;
+            const distance = Math.hypot(deltaX, deltaY);
+
+            if (distance < triggerDistance) {
+                moveBallToRandomSpot();
+            }
+        });
+    </script>
+</body>
+</html>

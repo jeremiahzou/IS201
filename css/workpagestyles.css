@@ -1,0 +1,106 @@
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(75, 125, 51);
+            text-align: center;
+        }
+        .pageLinks {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li {
+            font-size: 16px;
+            font-style: italic;
+            font-weight: normal;
+        }
+        ul {
+            list-style-position: inside;
+            padding-left: 0;
+            text-align: left;
+            display: inline-block;
+        }
+        a {
+            color: maroon;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        a:visited {
+            color: rgb(45, 45, 45);
+        }
+        .subheader a {
+            font-size: 22px;
+        }
+        .rangeLink a {
+            font-size: 22px;
+        }
+        .swingImage {
+            border: 10px solid black;
+        }
+        .topicListHeading {
+            font-weight: bold;
+            font-style: normal;
+            font-size: 20px;
+        }
+        .swingSections {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 80px;
+            position: relative;
+            left: -50px;
+        }
+        .backswingSection {
+            text-align: center;
+        }
+        .impactSection {
+            text-align: center;
+        }
+        .followThroughSection {
+            text-align: center;
+            position: relative;
+            left: 30px;
+        }
+        .videoSection {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .justify {
+            text-align: justify;
+        }
+
+        .homebg {
+            background-image: url('../images/Background.jpg');
+            background-size: cover;
+            background-position: top;
+        }
+        .box1 {
+            border-width: 1px;
+            border-style: solid;
+            border-color: gray;
+        }
+        .box2 {
+            border-width: 1px;
+            border-style: dashed;
+            border-color: gray;
+        }
+        .box3 {
+            border-width: 1px;
+            border-style: dotted;
+            border-color: gray;
+        }
